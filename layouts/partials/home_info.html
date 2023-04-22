@@ -1,6 +1,9 @@
 {{- with site.Params.homeInfoParams }}
 <article class="first-entry home-info">
     <header class="entry-header">
+	{{ $asset := resources.Get "/cover.jpg" }}
+	{{ $img := $asset.Fit "1080x384" }}
+	<img style="border-radius: 30px; margin-bottom: 65px;" alt="Mandarin Ducks" src="{{ $img.RelPermalink }}" />
         <h1>{{ .Title | markdownify }}</h1>
     </header>
     <div class="entry-content">
